@@ -19,22 +19,28 @@ function playerExpenses() {
     document.getElementById("per-player-input").value
   );
   const totalPlayerExpenses = selectedPlayer * perPlayerValue;
-  console.log(totalPlayerExpenses);
-  const totalDisplay = document.getElementById("total-expenses-display");
-  totalDisplay.innerText = totalPlayerExpenses;
+  if (perPlayerValue > 0) {
+    console.log(totalPlayerExpenses);
+    const totalDisplay = document.getElementById("total-expenses-display");
+    totalDisplay.innerText = totalPlayerExpenses;
+  } else {
+    alert("value can not be negative");
+  }
 }
 // Function for total cost
 function totalCost() {
   const managerCost = parseFloat(document.getElementById("manager-cost").value);
   const coachCost = parseFloat(document.getElementById("coach-cost").value);
-  const totalDisplay = parseFloat(
-    document.getElementById("total-expenses-display").innerText
-  );
-
-  const totalCost = totalDisplay + managerCost + coachCost;
-
-  const totalAmountDisplay = document.getElementById("total-amount-display");
-  totalAmountDisplay.innerText = totalCost;
+  if (managerCost > 0 && coachCost > 0) {
+    const totalDisplay = parseFloat(
+      document.getElementById("total-expenses-display").innerText
+    );
+    const totalCost = totalDisplay + managerCost + coachCost;
+    const totalAmountDisplay = document.getElementById("total-amount-display");
+    totalAmountDisplay.innerText = totalCost;
+  } else {
+    alert("Value can not be negative.");
+  }
 }
 
 document.getElementById("messi-btn").addEventListener("click", function () {
