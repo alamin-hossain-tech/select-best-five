@@ -1,7 +1,7 @@
-let selectedPlayer = 1;
+let selectedPlayer = 0;
 // Function For selecting player
 function selectPlayer(player, playerBtn) {
-  if (selectedPlayer <= 5) {
+  if (selectedPlayer <= 4) {
     const ol = document.getElementById("ol");
     const li = document.createElement("li");
 
@@ -10,11 +10,33 @@ function selectPlayer(player, playerBtn) {
     document.getElementById(playerBtn).setAttribute("disabled", true);
     selectedPlayer++;
   } else {
-    alert("Maximum 5 player can be add.");
+    alert("Maximum 5 players can be add.");
   }
 }
+// Function for total player expenses
+function playerExpenses() {
+  const perPlayerValue = parseFloat(
+    document.getElementById("per-player-input").value
+  );
+  const totalPlayerExpenses = selectedPlayer * perPlayerValue;
+  console.log(totalPlayerExpenses);
+  const totalDisplay = document.getElementById("total-expenses-display");
+  totalDisplay.innerText = totalPlayerExpenses;
+}
+// Function for total cost
+function totalCost() {
+  const managerCost = parseFloat(document.getElementById("manager-cost").value);
+  const coachCost = parseFloat(document.getElementById("coach-cost").value);
+  const totalDisplay = parseFloat(
+    document.getElementById("total-expenses-display").innerText
+  );
 
-// if (loop <= 5) {
+  const totalCost = totalDisplay + managerCost + coachCost;
+
+  const totalAmountDisplay = document.getElementById("total-amount-display");
+  totalAmountDisplay.innerText = totalCost;
+}
+
 document.getElementById("messi-btn").addEventListener("click", function () {
   selectPlayer("messi", "messi-btn");
 });
@@ -63,12 +85,8 @@ document.getElementById("kevin-btn").addEventListener("click", function () {
   selectPlayer("kevin", "kevin-btn");
 });
 
-// } else {
-//   alert("Max 5 Player can be add");
-// }
+document
+  .getElementById("total-player-expenses")
+  .addEventListener("click", playerExpenses);
 
-// document.getElementById("messi-btn").addEventListener("click", function () {
-//   li.innerText = "Lionel Messi";
-//   ol.appendChild(li);
-//   document.getElementById("messi-btn").setAttribute("disabled", true);
-// });
+document.getElementById("calculate-total").addEventListener("click", totalCost);
