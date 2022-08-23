@@ -23,10 +23,13 @@ function playerExpenses() {
     console.log(totalPlayerExpenses);
     const totalDisplay = document.getElementById("total-expenses-display");
     totalDisplay.innerText = totalPlayerExpenses;
+  } else if (perPlayerValue === 0) {
+    alert("value should be more than 0 😔");
   } else {
-    alert("value can not be negative");
+    alert("Value can not be less than one 😔");
   }
 }
+
 // Function for total cost
 function totalCost() {
   const managerCost = parseFloat(document.getElementById("manager-cost").value);
@@ -38,8 +41,10 @@ function totalCost() {
     const totalCost = totalDisplay + managerCost + coachCost;
     const totalAmountDisplay = document.getElementById("total-amount-display");
     totalAmountDisplay.innerText = totalCost;
+  } else if (managerCost === 0 || coachCost === 0) {
+    alert("value should be more than 0 😔");
   } else {
-    alert("Value can not be negative.");
+    alert("Value can not be less than one 😔");
   }
 }
 
