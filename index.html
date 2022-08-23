@@ -13,21 +13,26 @@
         class="bg-[url('/img/hero-bg-dark.png')] bg-no-repeat bg-cover min-h-screen flex justify-center items-center mx-auto bg-center"
       >
         <div class="mx-auto w-1/2 text-center">
-          <h1
-            class="text-5xl text-center mb-5 text-orange-400 font-medium font-mono"
-          >
+          <h1 class="text-6xl text-center mb-5 text-orange-400 font-medium">
             Choose Your Favourite 5 Player
           </h1>
           <p class="text-lg text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-            consectetur qui nisi quae alias excepturi ullam corrupti deleniti
-            fugiat eum?
+            Football, also called association football or soccer, is a game
+            involving two teams of 11 players who try to maneuver the ball into
+            the other team's goal without using their hands or arms. The team
+            that scores more goals wins. Football is the world's most popular
+            ball game in numbers of participants
           </p>
         </div>
       </section>
       <section class="mt-15 text-white bg-zinc-800">
-        <div class="grid grid-cols-4 w-9/12 mx-auto gap-6 py-20">
-          <div id="select" class="col-span-3 grid grid-cols-3 gap-6">
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-5/6 mx-auto gap-6 py-20"
+        >
+          <div
+            id="select"
+            class="md:col-span-2 lg:col-span-3 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+          >
             <div class="bg-black rounded-lg">
               <img
                 class="w-full rounded-t-lg"
@@ -288,8 +293,10 @@
                 Calculate Total
               </button>
               <div class="flex place-content-between mt-5">
-                <p>Total:</p>
-                <p>$<span id="total-amount-display">0</span></p>
+                <p class="font-medium text-lg">Total:</p>
+                <p class="text-orange-400 font-medium text-lg">
+                  $<span id="total-amount-display">0</span>
+                </p>
               </div>
             </div>
           </div>
